@@ -1,0 +1,56 @@
+form {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+h3 {
+    margin: 1.5rem 0;
+}
+
+.main {
+    margin-top: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.form-container {
+    background-color: rgb(231, 231, 231);
+    padding: 2rem 0;
+    margin: 3rem 20%;
+    border-radius: 6px;
+}
+
+.form-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.autocomplete-input {
+    width: 15rem;
+}
+
+.button-votar {
+    padding: .5rem;
+    width: 10rem;
+    border: none;
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+.button-votar:hover {
+    background-color: rgb(61, 61, 61);
+}
+
+.link-text {
+    font-size: 16px;
+    color: black;
+}
+
+@media (max-width: 800px) { 
+    .form-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .form-container {
+        margin: 3rem 5%;
+    }
+}

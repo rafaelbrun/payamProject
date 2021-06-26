@@ -19,8 +19,15 @@ module.exports = {
 
 	async votar(request, response) {
 		const { id } = request.params;
+		const { eleitor } = request.body;
 
 		try {
+			const eleitorResp = await connection('eleitores')
+				.where('name', eleitor)
+				.first();
+
+			eleitorResp.isElegivel = false;
+
 			const candidato = await connection('candidatos')
 				.where('id', id)
 				.first();
@@ -29,7 +36,11 @@ module.exports = {
 
 			await connection('candidatos')
 				.where('id', id)
-				.update({ votos: candidato.votos })
+				.update({ votos: candidato.votos });
+
+			await connection('eleitores')
+				.where('id', eleitorResp.id)
+				.update({ isElegivel: eleitorResp.isElegivel });
 
 			return response.json({
 				success: true,

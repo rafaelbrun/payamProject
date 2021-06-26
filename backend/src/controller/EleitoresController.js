@@ -8,10 +8,11 @@ module.exports = {
 	},
 
 	async create(request, response) {
-		const { name } = request.body;
+		const { name, isElegivel } = request.body;
 
 		await connection('eleitores').insert({
 			name,
+			isElegivel
 		})
 		return response.json();
 	},

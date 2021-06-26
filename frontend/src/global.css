@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+body {
+    font: 400 14px Comic Neue, sans-serif;
+    background: #f0f0f5;
+    -webkit-font-smothing: antialiased;
+}
+
+input, button, textarea {
+    font: 400 18px Comic Neue, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
